@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+      <!-- Load React -->
+      <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+      <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>ReactApp</title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">//babel let us user current chacteristics of javascript for react without worring about compatibilies
+
+    const divRoot = document.querySelector('#root');//We search for the element root in the domument
+
+    const name = "David"
+
+    const h1Tag = <h1>Hello World, I'm { name } !</h1>;//we create an element to be render
+
+    ReactDOM.render( h1Tag , divRoot );//We tell react to render h1Tag in the espace of divRoot
+
+
+  </script>
+    
+</body>
+</html>
