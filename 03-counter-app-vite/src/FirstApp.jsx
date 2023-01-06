@@ -37,10 +37,10 @@ export const FirstApp = ( {title , subtitle, name } ) => {
         
         <p>I'm a subtitle</p>
         
-        <p>{ title }</p> 
+        <p data-testid='test-title'>{ title }</p> {/*data-test-id is a tesntog element in which we can use to test this specific element */}
         <p>{ subtitle }</p>
         <p>{ name }</p>
-
+        
         <p>{ newMessage }</p> {/* you can use a permited expresion inside of the {} when it's not an object*/}
 
         <p>{ JSON.stringify(objectMessage) }</p>{/* if you want to use an object then you must convert it to a JSON */}

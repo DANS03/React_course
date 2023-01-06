@@ -10,7 +10,7 @@ export const CounterApp = ({value}) => {
 
   const [ counter, setCounter ] = useState( value ); 
   
-  console.log('render'); //This is a demostrations that every time that we excecute any of the function the whole component will be render
+  //console.log('render'); //This is a demostrations that every time that we excecute any of the function the whole component will be render
 
   function handleClick(){
   
@@ -47,7 +47,7 @@ export const CounterApp = ({value}) => {
        +1 
     </button>
 
-    <button onClick={ handleSustraction  }> 
+    <button aria-label="btn-minus" onClick={ handleSustraction  }>{/* aria-label="btn-minus" is an identifire that willbe usa as an id in the test*/}
        -1 
     </button>
 
