@@ -33,7 +33,7 @@ const getHeroByIdAsync = ( id ) => {
         setTimeout( () => {
              //console.log('The time out last 2 seconds');
              
-             const hero = getHeroById(id); //we simulate an api conection by importing this fucntion
+             const hero = getHeroById(id); //we simulate an api connection by importing this fucntion
             
              if( hero === undefined ){
                 reject( 'No hero found' );
