@@ -1,47 +1,38 @@
 import React, { useState } from 'react'
+import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const GifExpertApp = () => {
     
-    const [categories,setCategories ] = useState([ 'Pingu', "Batman"]);
-  
-    const onAddCategories =  (newCategory) => {
+    const [categories,setCategories ] = useState([ 'Pingu']);
 
-        setCategories( categories => {
-            return [...categories,newCategory];
-        } );
+    const addCategories = ( newCategory ) => {
 
+        if( categories.includes(newCategory) ){
+            alert('The category already exists');
+            return
+        }
 
-    };
+        setCategories( [ newCategory , ...categories ] );
 
-    console.log(categories);
-
+     };
 
     return (
     <>
 
-        {/* Head/title */}
         <h1>Gif Expert App</h1>
-        
-        {/* Input */}
 
-        {/*<input type = "text" placeholder='Insert category...' id='newCategory'></input>
-        <input type = "submit"></input>*/}
+        <AddCategory 
+        //setCategories = {setCategories} 
+        onNewCategory = { (value) => addCategories(value) }//this will be resive inside addCategory and executed there
+        />
 
-        {/* List */}
-
-        <button onClick={onAddCategories}>Add category</button>
-
-        <ul>
-            {/* Items*/}
-
-            { 
-                categories.map( category => {//the map function executes the code for every items inside the list
-                    return <li key={category}> {category} </li>//we have to take in consideration that we must use a unique key for every item of the list
-                }) 
-            }
-
-        </ul>
-
+        { 
+            categories.map( (category) => (//the map function executes the code for every item inside the list
+            
+                <GifGrid category={category} />
+            ))
+        }
            
     </>
   )
