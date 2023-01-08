@@ -10,7 +10,7 @@ export const GifExpertApp = () => {
 
         if( categories.includes(newCategory) ){
             alert('The category already exists');
-            return
+            return;
         }
 
         setCategories( [ newCategory , ...categories ] );
@@ -30,7 +30,7 @@ export const GifExpertApp = () => {
         { 
             categories.map( (category) => (//the map function executes the code for every item inside the list
             
-                <GifGrid category={category} />
+                <GifGrid key={category} category={category} />
             ))
         }
            
